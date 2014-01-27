@@ -1,0 +1,26 @@
+section{
+	margin:0 auto;
+	width:400px;
+}
+#chat{
+	border: 1px solid;
+	min-height: 100px;
+	max-height: 200px;
+	overflow: auto;
+}
+#colorSelector{
+	margin-bottom: 8px;
+	width: 30px;
+}
+#colorSelector div{
+	background: url("../js/colorpicker/images/select.png") center;
+	height: 30px;
+	width: 30px;
+}
+#logado{
+	display: none;
+}
+#texto{
+	border: 1px solid #e1e1e1;
+	width: 100%;
+}
