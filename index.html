@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Programmer top - node.js</title>
+	<link rel="stylesheet" href="js/colorpicker/css/colorpicker.css" />
+	<link rel="stylesheet" href="css/estilo.css" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/colorpicker/js/colorpicker.js"></script>
+	<script type="text/javascript" src="js/codigo.js"></script>
+	<script type="text/javascript" src="http://node-chat-em-grupo.vrazor.com/socket.io/socket.io.js"></script>
+	<script type="text/javascript">
+	$(document).on("ready", iniciar);
+
+	var ws = io.connect("http://node-chat-em-grupo.vrazor.com");
+
+	function iniciar() 
+	{
+		
+		ws.on("msgServer", receber);
+
+		$("#enviar").on("click", enviar);
+
+		$(document).on("keypress", pressionar);
+
+	}
+	function enviar() 
+	{	
+		if($("#texto").val() != ''){
+			var valores = {
+							'nome':$("#nome").val(),
+							'cor':$("#color").val(),
+							'texto':$("#texto").val()
+							};
+
+
+			ws.emit("novaMensagem", valores);
+			$("#texto").val('').focus();
+		}	
+	}
+	function pressionar(t)
+	{
+		if(t.which == 13){
+			$("#enviar").click();
+		}
+		console.log(t.which);
+	}
+	function receber(valores) 
+	{
+		
+		$("#chat").append('<span style="color:'+ valores.cor +';display:block;"><b>'+ valores.nome +' diz:</b> '+ valores.texto +'</span>').scrollTop();
+
+
+	}
+	</script>
+</head>
+<body>
+	<section id="logado">
+		<div id="chat">
+			
+		</div>
+		<input type="text" id="texto" />
+		<input type="button" id="enviar" placeholder="Escreva uma mensagem" value="Enviar" /> 
+		<a href="#" id="sair">sair</a>
+	</section>
+
+	<section id="logar">
+		Escolha a cor da letra: <div id="colorSelector"><div></div></div>
+	    <input type="hidden" id="color" />
+		<input type="text" id="nome" placeholder="Escreva o seu nome" />
+		<input type="button" id="entrar" value="Entrar" /> 
+	</section>
+	
+</body>
+</html>
