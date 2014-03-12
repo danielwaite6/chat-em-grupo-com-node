@@ -1,4 +1,4 @@
-var s = require("socket.io").listen(9090);
+var s = require("socket.io").listen(3300);
 
 s.sockets.on("connection", iniciar);
 

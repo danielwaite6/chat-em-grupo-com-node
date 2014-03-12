@@ -8,11 +8,11 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/colorpicker/js/colorpicker.js"></script>
 	<script type="text/javascript" src="js/codigo.js"></script>
-	<script type="text/javascript" src="http://localhost:9090/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="http://node-chat-em-grupo.vrazor.com/socket.io/socket.io.js"></script>
 	<script type="text/javascript">
 	$(document).on("ready", iniciar);
 
-	var ws = io.connect("http://localhost:9090");
+	var ws = io.connect("http://node-chat-em-grupo.vrazor.com");
 
 	function iniciar() 
 	{
