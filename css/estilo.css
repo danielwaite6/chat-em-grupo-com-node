@@ -24,3 +24,17 @@ section{
 	border: 1px solid #e1e1e1;
 	width: 100%;
 }
+
+.colorpicker input{
+	-webkit-appearance: none; 
+	background: #545454; 
+	border:0; 
+	-webkit-box-shadow: none; 
+	box-shadow: none; 
+	color: black; 
+	font-size: 9px; 
+	margin: 0; 
+	padding: 0; 
+	height: auto; 
+	width: auto; 
+}
