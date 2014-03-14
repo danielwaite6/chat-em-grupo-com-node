@@ -1,0 +1,23 @@
+{
+  "name": "chat-em-grupo",
+  "version": "0.0.0",
+  "description": "Este é um simples chat em grupo",
+  "main": "servidor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vsanmaster/chat-em-grupo-com-node"
+  },
+  "author": "Vitor Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vsanmaster/chat-em-grupo-com-node/issues"
+  },
+  "homepage": "https://github.com/vsanmaster/chat-em-grupo-com-node",
+  "dependencies": {
+    "socket.io": "^0.9.16",
+    "mongoose": "^3.8.8"
+  }
+}
