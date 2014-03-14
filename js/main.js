@@ -59,7 +59,7 @@ function send()
 							};
 
 
-			ws.emit("novaMensagem", values);
+			ws.emit("newMessage", values);
 			$("#text").val('').focus();
 		}	
 	}
